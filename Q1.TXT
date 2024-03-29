@@ -1,0 +1,43 @@
+What I know about JavaScript
+
+It has following features: client side scripting, interpreted but there is 
+partial compilation which results i hoisting, object oriented, functional, dynamioc typing (not strict typing), 
+case sensitive, autocasting supports the ability to be dyamically casted
+
+Primitive Types : (to see which type obj is use "typeof" or "type)
+- Sring, Number, Boolean, Undefined, Null
+
+Functions are hoisted, variables are not, functional expressions (same as anonymous functions) are not hoisted
+But take precedance over named functions whe hoisting
+
+Operators : &&, ||, !, ==, ===, =, ?
+There are your basic AND, OR, NOT, comparing two values but not type, comparing two values as well as their type,
+and last with just one "=" is assignment Operators
+? is ternary example a==b? true:false
+
+4 types of functions:
+1. Named example function test () {function body}
+2. function expression example var x = function(){function body}
+3. IIFE example execute one time only and immediately
+example : 
+(function myIIFE(p1){
+    FUNCTION BODY
+})(pass p1 here)
+4. constructor function
+
+Access Modifier : javascript does not have private, public, protected, etc. It has closure and its purpose is to 
+let a function have private variables. Closure is accomplished usig chain execution also known as currying
+
+Chain execution and curryong is not only for creating private variable. It is also used for Nesting. 
+Nesting calls can be easily done like this - A(5)B(2)C(1) - eACH CALL IS RTURNING A FUNCTION DEFINITION
+
+Callback - use this to pass a function into another function. It helps pass in the logic that the calling function wants. 
+Example if you have different credit card readers. You can pass the logic for each type into the function that needs to 
+process the payment. Looks almost polymosrphic. Or if you want, pass in a function whose logic is fixed. In which case, you do 
+not retype the same logic everytime. 
+
+fuction ProcessPayment(CardReader){
+    use the card reader
+}
+ProcessPayment(IngenicoIPP320)
+ProcessPayment(paxs3)

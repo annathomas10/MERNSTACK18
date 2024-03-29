@@ -15,7 +15,7 @@ function PrintData() {
     console.log("No Param ")    
 }
 
-PrintData(); // No Param
+PrintData(); // No Param  ********** SO EVEN THO FUNCTIONS ARE FIRST CLASS CIT, IT USES THE ANONYMOUS FUNC DEFINED ABOVE
 
 function PrintData(param1) {
     console.log("1 - Param ", param1)    
