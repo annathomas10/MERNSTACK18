@@ -65,7 +65,7 @@ GetDetails.apply(null, seesionList)
 //it should use call and apply do describe both the cases
 
 function GetCourses(concept, class1, class2, class3, class4, class5) {
-    //console.log(this)
+    console.log(this)
     console.log(`Call Extension - ${concept}`)  //`asdasda  ${session1} asdasd`
 
     console.log(`${class1} 
@@ -82,9 +82,11 @@ function GetCourses(concept, class1, class2, class3, class4, class5) {
     
 }
 
-GetCourses.call(user, "Web Tech", "AWS", "MERNStack", "DevOPs", "Data Science")
+//W3Schools - Methods like call(), apply(), and bind() can refer this to any object.
+//And these methods take an owner object as first parameter, followed by list/array of optional params
+//GetCourses.call(user, "Web Tech", "AWS", "MERNStack", "DevOPs", "Data Science")
 
 var Classes = ["Web Tech", "AWS", "MERNStack", "DevOPs", "Data Science","Data Structure"];
 
-GetCourses.apply(user, ["Web Tech", "AWS", "MERNStack", "DevOPs", "Data Science","Data Structure"])
+//GetCourses.apply(user, ["Web Tech", "AWS", "MERNStack", "DevOPs", "Data Science","Data Structure"])
 GetCourses.apply(user2, Classes)
