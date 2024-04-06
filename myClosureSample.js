@@ -21,7 +21,7 @@ function parent(name){
 }
 
 var child = parent("bob")
-console.log(child)
+console.log(child) //prints "[Function: getStudentStatus]"
 console.log(child())
 
 var child = parent("Anna")
