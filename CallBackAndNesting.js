@@ -1,5 +1,10 @@
 //Callback - we pass a function as parameter to another function to increase the resusability is termed as callback function
 
+//But I think even more useful is that you are free to pass in the logic needed at that moment ie 
+//polymorsphism eg pass in logic for one hardware device vs another
+//Reusability to me does not seem to need callback since yuo can just call what is defined in the file 
+//or in an imported file
+
 //a common feature enabled function can be created and used as callback function when in need
 function PrintDetails(printMsg, param1, param2) {
     console.log(printMsg, param1, param2)
