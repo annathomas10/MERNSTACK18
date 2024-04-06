@@ -45,7 +45,7 @@ console.log(SoftwareEngg.GetEmployeeInfo())
 console.log(SoftwareEngg.__proto__) //returns Employee object
 
 //4. Empty Object
-var EmptyObj = {} //new Object({})
+var EmptyObj = {} //new Object({}) -- this is another way to do same thing
 console.log(EmptyObj.__proto__)
 
 //5. Breaking the protoype chain and defining base functions - passing null in constructor method
