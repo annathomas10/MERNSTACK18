@@ -2,6 +2,8 @@
 
 //But I think even more useful is that you are free to pass in the logic needed at that moment ie 
 //polymorsphism eg pass in logic for one hardware device vs another
+//Update : I was wrong - this cannot be polymorphic since you would need differently named / paramed etc
+// and for that you need to know the device type 
 //Reusability to me does not seem to need callback since yuo can just call what is defined in the file 
 //or in an imported file
 
