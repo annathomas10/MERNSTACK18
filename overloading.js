@@ -3,11 +3,14 @@
 //1. Overriding - runtime polymorphism,  <we'll explore, through objects>
 //2. Overloading - compile time polymorphism <same name multiple methods with different params and their types>
 
-PrintData(); // No Param
+PrintData(); // No Param - gets the last defn
 
 var PrintData = function (param1, param2, param3, param4){
     console.log("4 - Params ", param1, param2, param3, param4)  
 }
+
+// EVEN THO FUNCTIONS ARE FIRST CLASS CIT, IT USES THE ANONYMOUS FUNC DEFINED ABOVE IN 
+// ALL THE CODE BELOW.........
 
 PrintData("One", "Two", "Three", "Four");
 
@@ -15,7 +18,7 @@ function PrintData() {
     console.log("No Param ")    
 }
 
-PrintData(); // No Param  ********** SO EVEN THO FUNCTIONS ARE FIRST CLASS CIT, IT USES THE ANONYMOUS FUNC DEFINED ABOVE
+PrintData(); // No Param  
 
 function PrintData(param1) {
     console.log("1 - Param ", param1)    
@@ -41,3 +44,12 @@ PrintData("One", "Two", "Three"); // 3 - Params
 // }
 
 // PrintData("One", "Two", "Three", "Four");
+
+/* Output was
+3 - Params  undefined undefined undefined
+4 - Params  One Two Three Four
+4 - Params  undefined undefined undefined undefined
+4 - Params  One undefined undefined undefined      
+4 - Params  One Two undefined undefined
+4 - Params  One Two Three undefined
+*/
