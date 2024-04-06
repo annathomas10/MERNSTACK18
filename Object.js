@@ -49,7 +49,7 @@ var EmptyObj = {} //new Object({})
 console.log(EmptyObj.__proto__)
 
 //5. Breaking the protoype chain and defining base functions - passing null in constructor method
-var nullPrototype = Object.create(null)
+var nullPrototype = Object.create(null) //so now you can override the base functions provided by javascript
 nullPrototype.toString = function (params) {
 return "Do something interesting"
 }
@@ -60,7 +60,7 @@ var User = {name : "Aileen", add1 : "Lake City 1", mobile : "9898989889"}
 
 var Address = {name : "Aileen", add1 : "Wall Streets", productName : "New product" }
 
-//var Delivery = {User , Address}
+//var Delivery = {User , Address} //This will just create a variable that has both objects in it
 
 var Delivery = Object.assign(User, Address)//takes the left most ones updated values in case of same properties
 
