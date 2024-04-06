@@ -48,6 +48,7 @@ console.log(validUser(5,9));
 })("David", "Miller")
 
 //as soon as function executes at ln:44 it can't be accessed any further
+//It executes only one time
 //IIFE_Name("Steve", "Smith")
 
 //4. Constructor Function : Is used to create a class like structure using functions
