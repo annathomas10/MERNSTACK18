@@ -1,5 +1,5 @@
 
-//There seems to be 3 scenarios - a var, a function called directly, an function assigned to a var and called thru the var.
+//There seems to be 3 scenarios - a var, a named function, an function assigned to a var and called thru the var.
 //Hoisting happens only in the named function case
 
 
