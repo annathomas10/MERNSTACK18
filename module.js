@@ -15,6 +15,8 @@ var User = {
 
 var aConstant = 3.1413
 
+//can be seen even tho not exported since global
+//global not recommened since on the heap
 globalThis.User = {
     User : "Second User",
     NewUser : "Suyash",
