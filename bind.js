@@ -23,7 +23,7 @@ var User = {
 
         setTimeout((function () {
             //this - the context gets updated with Timeout, which doesnot have Name and Address in it
-            console.log(`SetTimeOut with no bind or copy of this: ${that.Name} and ${that.Address}`);// that is copy of this in parent function
+            console.log(`SetTimeOut with no bind or copy of this: ${this.Name} and ${this.Address}`);// that is copy of this in parent function
         }),2000) 
 
         setTimeout((function () {
