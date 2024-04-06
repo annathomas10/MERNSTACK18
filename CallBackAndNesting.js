@@ -26,6 +26,15 @@ GetSesionInfo("MERNSTack", "Core Javascript - CallBack ", PrintDetails)
 
 //nested function and javascript currying (arrange raw, )
 
+/*currying is a technique in JavaScript that allows you to transform functions 
+with multiple arguments into a sequence of functions, each taking one argument 
+at a time. It promotes code reusability, composability, and flexibility */
+
+/* Curried functions syntactically look very similar to Closures; but in the midst 
+of their many similarities they have differences in their purpose. Currying is not 
+used to capture the lexical environment of its outer scope, While Closures aren't 
+used to breakdown multi-argument functions */
+
 var number1 = 20;
 
 function A(a) {
