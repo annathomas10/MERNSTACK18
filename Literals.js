@@ -24,9 +24,11 @@ var readName = User.name;
 User.name = "David"
 
 var User2 = User;
-
+console.log(User2) //surprise, surprise......This displays "david", yet vars are not hoisted......The trick 
+//safe coding not untidy coding
 var User2 = {
     name : "David",
     age : 26,
     address : "Somewhere in Canada"
 }
+console.log(User2)
