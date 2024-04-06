@@ -18,6 +18,7 @@ myVar = function PrintName(name) {
     console.log(name)   
 }
 
+PrintName('anna') //hoisted
 function PrintName(name) {
     console.log(name)   
 }
