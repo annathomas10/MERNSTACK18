@@ -14,7 +14,7 @@ setTimeout(function () {
 
     setTimeout(function () {
         console.log("First Delayed Execution's Timeout - No 1.1") //4
-    }, 0)
+    }, 0) //even tho 0, it will get executed whenever it gets out of the Q if there were other messages ahead of it
 
 }, 1000) //
 
