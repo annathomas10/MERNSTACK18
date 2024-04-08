@@ -49,6 +49,7 @@
     //console.log(my_const)
 
     //hack for const - value is immutable but reference can be changed
+    //Ref to what it holds......not User itself
 
     const User = {
         session : "Javascript - OOJS"
@@ -70,17 +71,21 @@
 for (var index = 1; index < 5; index++) {
     
     setTimeout(() => {
+        //this only prints 5
         console.log("Incremented with 2 seconds delay " + index)    
     }, 2000);
 }
 
+//prints 5
 console.log("Breaking Condition "+ index)
 
 
 for (let index1 = 0; index1 < 5; index1++) {
     setTimeout(() => {
+        //this prints 0 to 4
         console.log("Incremented with 2 seconds delay using let " + index1)    
     }, 2000);    
 }
 
+//error since index is not available
 //console.log("Breaking Condition using let "+ index1)
