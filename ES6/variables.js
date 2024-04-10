@@ -28,7 +28,12 @@
 
 {
     //var my_var -> var can be reassigned, re-declared anytime anywhere
-
+    //var my_var = 2  //even this had an error 'my_var' has already been declared. I thought it would be fine
+   // console.log(my_var)
+   //my_var=5 - this had 'Cannot access 'my_var' before initialization'. It sees it as the let var below
+   //not the my_var outside this block
+    let my_var = 10
+    console.log(my_var)
 
     let my_let; //= 2015 //we can declare and assign value later
     my_let = 2015
