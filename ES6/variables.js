@@ -68,7 +68,9 @@
 }
 
 
-//4. let and const get evaluated and not passed as reference as var 
+//4. let and const get evaluated and not passed as reference, as var 
+// So thatis why setTimeout uses the final value that var has
+// But let is evaluated and given to setTimeout like a value not reference 
 
 for (var index = 1; index < 5; index++) {
     
