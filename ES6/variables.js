@@ -37,6 +37,8 @@
     my_let = 2015.2015
     //console.log(my_let) // re-assignment is possible
 
+    // You cannot redeclare, but you can actually assign it a value that is of a different type
+    //e.g. my_let = 'foo' - no error here, nice and flexible....
     //let my_let = "David Js Scholar" //re-declaration is not allowed
 
     //constant needs to be declared and is immutable
