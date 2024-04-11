@@ -13,17 +13,25 @@ let Student = {
 
 let { Name = "Joe S", Session, Standard, Subject : {Physics, Mathematics = 100, Language}} = Student
 
-//Questions for practice
+//use of destructuring
+//data from multiple sources with user object, product, card type, dollar amount etc etc. Want to combine it
+// usig just the info from each. Dot is tedious plus...initialize each time (let name.., let ...., let ...)
+//destructuring is easier and no init over and over
+//One obj called OrderDetails/paymentdetails etc and combine these values in there with nested values as well 
+//if we want
+//Array destructuring is most common
+//Dependancy injection uses destrycturing...to check into
+//Passing data - props get destructtred .... to check into
 
 //1. print firstname and sessionTopics,
 
-console.log('HW1',Name, Student) //Name is not printed????
-
+console.log('HW1', Name, Student) //Name is not printed???? Line 14 has no effect
+/*
 //2. along with that also create a lastname and covered3 as "ES6", without making any change in StudentTest
 
 let { lastname = "Trent"} = Student
 Student.Subject.ES6=99
-console.log('HW2',lastname)
+console.log('HW2',lastname) //even without referring to Student, I can access lastname??
 //now ES6 is also in the original, but lastname is not. And the point was to not use the dot notation which
 //would take several lines if more than one value
 Student.lastname = 'LastnameUsingDotNotation'
@@ -90,3 +98,4 @@ for (let index = 1; index <= 5; index++) {
     }, 2000);
 }
 
+*/
