@@ -19,6 +19,22 @@ let { Name = "Joe S", Session, Standard, Subject : {Physics, Mathematics = 100, 
 //destructuring is easier and no init over and over
 //One obj called OrderDetails/paymentdetails etc and combine these values in there with nested values as well 
 //if we want
+
+//really good - https://dmitripavlutin.com/javascript-object-destructuring/
+
+let customer = {cname:"anna", address:{street:"12 test ln", city:"acity"}}
+//destructure 
+let {cname, address:{city}} = customer
+//cannot use 'name' again since it was used above
+let product ={productname:"cake", qty:4, price:12.00}
+// destructure, also add a new property with default value, also added alias for productname
+let {productname:prodname,price=5.00,discount=0.0} = product  
+console.log(cname, city,prodname, price )
+//Don't kow why but the 'name' got error 'deprecated' when i tried to use later lines
+let payment={cname,price}  //seeeeee - this is how to combine just what i wanted
+console.log(payment)
+
+/*
 //Array destructuring is most common
 //Dependancy injection uses destrycturing...to check into
 //Passing data - props get destructtred .... to check into
