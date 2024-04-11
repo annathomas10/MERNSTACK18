@@ -36,7 +36,7 @@ return "Less than 15 " +(a+b)
 // console.log(Func_Arrow_1(7,9))
 // console.log(Func_Arrow_1(9))
 
-
+breed = 'cat'
 
 //2. Arrow function copies the context of parent as its own context
 
@@ -49,14 +49,16 @@ var User1 = {
     Name : "Otoi",
     Address : "In Paris",
     
-    
+    //useful to give out, and others can just send in their own values from their global...??
+    //dynamic cotext is good??
+    //Follow JS defined ways and won't be surprised
     GetUserInfo : ()=> {
     // console.log(this) //User - as context
     console.log(`User Info ${this.Name} and ${this.Address}`);
     
     
     var that = this; //that - copies dynamic context
-    setTimeout(function () {
+   /* setTimeout(function () {
     console.log(`SetTimeOut User Info ${that.Name} and ${that.Address}`);// that is copy of this in parent function
     }, 2000) 
     
@@ -65,7 +67,11 @@ var User1 = {
     // _this = this
     setTimeout(() => {
     console.log(`SetTimeOut User Info ${this.Name} and ${this.Address}`); //_this.Name & _this.Address
-    }, 2000) 
+    }, 2000)  */
+
+    setTimeout(() => {
+        console.log(`SetTimeOut User1 Info ${this.Breed}`);// that is copy of this in parent function
+        }, 2000) 
     
     
     }
