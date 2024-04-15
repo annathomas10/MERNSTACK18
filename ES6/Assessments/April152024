@@ -1,0 +1,157 @@
+
+// 1. How to preserve the immutability on my heroes list? Solve below problems using the same
+// a. Get heroes who are not evils
+// b. Print Unique family names
+// c. Print Hero Names from given objects, and append sir in each of them before printing
+// d. Do we have any hero in Marvel Family who is not evil
+
+
+// const heroes = [
+// { name: 'Wolverine', family: 'Marvel', isEvil: false },
+// { name: 'Deadpool', family: 'Marvel', isEvil: false },
+// { name: 'Magneto', family: 'Marvel', isEvil: true },
+// { name: 'Charles Xavier', family: 'Marvel', isEvil: false },
+// { name: 'Batman', family: 'DC Comics', isEvil: false },
+// { name: 'Harley Quinn', family: 'DC Comics', isEvil: true },
+// { name: 'Legolas', family: 'Tolkien', isEvil: false },
+// { name: 'Gandalf', family: 'Tolkien', isEvil: false },
+// { name: 'Saruman', family: 'Tolkien', isEvil: true }
+// ]
+
+1. Even though its a const, it's contents can be modified. To make an immutable structure from this, do the following:
+let immutable = {...heroes}
+let notevil = heroes.filter(heroe => heroe.isEvil=="false" ? heroe : "")
+let uniqueFamilyNames = heore.reduce((prevVal, currVal, index, array)=>{
+                prevVal[currVal.family] = prevVal[currVal.family] ? prevVal[currVal.family] + 1 : 1
+                return prevVal 
+        }, []) 
+console.log(uniqueFamilyNames)
+
+
+
+
+//2. Use the spread and rest operator to create a function which can multiple numbers from 1...n (n is the number of choice)
+// also need to print students of the session using same example
+let arrayOfNums = arr(1,2000)
+function largeSum(...arrayOfNums)
+{
+    let sum=0
+    sum = arrayOfNums.reduce((prevVal, currVal)=> prevVal + currVal, 0)
+    return sum
+}
+
+
+//3. Print the last name through destructuring and add a contact number:9119119110 as well
+// const person = {
+// userDetails :{
+// first: "FirstName",
+// last: "LastName"
+// }
+// }
+let { userDetails:{first: "FirstName", last: "LastName"}, contactnumber:"9119119110"} = person
+console.log(last)
+
+
+//4. Give me an example of const data manipulation
+const myObj = {
+    name:"Anna"
+}
+myObj.name="Sandra"
+
+//5. What is the difference between for-of and for-in show with examples
+for-of is for iterating through objects like arrays
+let myarray = [1,2,3,4,5]; 
+for (const key in myarray) {
+         console.log(key)
+         console.log(myarray[key])
+}
+
+for-in is for json objects
+let student = {name:"Anna Thomas", subject:"Biology", grade:"100"}; 
+for (const key in student) {
+        console.log(`${key}  ${student[key]}`)
+    }
+}
+
+//6. Give me an example of bind and write its usage, comparison with arrow function
+var systemMainteance = {
+    machineID:123
+    SetAlarm : function () {
+        setTimeout((function () {
+           Console.log('please do system maintenance on:',machineID)    
+        }).bind(User), 10000)
+
+        //arrow function does not need to bind, it will saves the parents context
+        setTimeout(()=>{
+           Console.log('please do system maintenance on:',machineID)    
+        }).bind(User), 10000)  
+    }
+}
+SetAlarm() //the alarm to do mainteance will go off after 10000 seconds
+
+
+//7. Create an example showing usage of event loop in concurrent execution cycle
+//These 2 will execute concurrently since both delay is set to 1second. The calls go from the stack
+//to the processing space and heap, from there to the queue and will be processed at or after 1 second
+//based on whe they get out of the queue
+setTimeout(function () {
+    console.log("Delayed Execution A") 
+}, 1000) 
+
+setTimeout(function () {
+    console.log("Delayed execution B") 
+}, 1000) 
+
+
+//8. create an example showing usage of short hand and default param.
+Default param: Without the defaults if a call does not supply the value, you can get NaN or undefined
+function Sum(a = 0, b = 0) {
+       return a + b
+}
+Sum(2) will be 2
+Sum(2,3) will be 5
+Sum() will be 0
+
+let hyundai = "2 cyliner", 
+datsun = "4 cylnder",
+mercedes = "6 cyliner",
+//without short hand
+let carCylinders = {
+    hyundai:hyundai,
+    datsun:datsun,
+    mercedes:mercedes
+}
+//with shorthand
+let carCylinders = {hyundai, datsun, mercedes }
+
+//9. Create two objects with some properties and merge them using Object method and ES6 way
+let doctor ={
+    name:"murphy",
+    qualifications:{
+        degree:'MD',
+        residency:'hospital xyz',
+        publications:'in progress'
+    }
+}
+let doctorWorkAddress = {Hospital:'UMD', Street:'12 test', city:'test'}
+let details = {...doctor,...doctorWorkAddress}
+let details2 = Object.assign(doctor,doctorWorkAddress)
+
+//10. Give me an example of call and apply each with it's usage
+let user = { name:"Bryan", age : 21, session : "Javascript" }
+let user2 = { name:"Joel", age : 20, session : "OOJS" }
+function PrintDetails(comment1, comment2) {
+        console.log(this.name, this.age, this.session, comment1, comment2)
+}
+
+//call allows us to send in a context
+PrintDetails.call(user, "Executing PrintDetail in user context!!") 
+PrintDetails.call(user2, "Executing PrintDetail in user2 context!!")
+
+//apply has the added benefit that you can pass in an array
+let comments = ["Executing PrintDetail in user context!!", "testing apply"]
+PrintDetails.apply(user, comments) 
+
+
+
+
