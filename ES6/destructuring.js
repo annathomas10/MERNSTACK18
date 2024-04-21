@@ -64,7 +64,7 @@ let { Name = "Joe S", Session, Standard, Subject : {Physics, Mathematics = 100, 
 console.log(Name)
 console.log(Session)
 console.log(Standard)
-//console.log(Subject)
-console.log(Mathematics)
+//console.log(Subject)  //this would not print - Subject is not defined
+console.log(Mathematics) //Had to use "=", not ":"
 console.log(Physics)
 console.log(Language)
