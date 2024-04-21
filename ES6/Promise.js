@@ -94,13 +94,15 @@ console.log("Promise Completed!!!");   */
 let myPromise = new Promise((resolve,reject)=>{
 
     setTimeout(() => {
+        //when I had a ":" after resolve, no error, but it just does not get executed
+        //maybe in a website behind page it would show error....? No tested, it does not
         resolve:({
             status:'passed',
             value:'learnt es6',
             code:'200'
            // test:'2'
         })
-    }, 500);
+    }, 2000);
 
     setTimeout(() => {
         reject:({
@@ -108,8 +110,10 @@ let myPromise = new Promise((resolve,reject)=>{
             value:'student still studying',
             code:'100'
         })
-    }, 500);
+    }, 2000);
 })
+
+console.log(myPromise)
 
 myPromise.then((response, error)=>{
     console.log("execution is successful  ", response) //resolved
@@ -123,12 +127,5 @@ console.log(myPromise)
 
 console.log(myPromise)
 
-console.log(myPromise)
+console.log('done') 
 
-console.log(myPromise)
-
-console.log(myPromise)
-console.log(myPromise)
-console.log(myPromise)
-console.log(myPromise)
-console.log(myPromise)
