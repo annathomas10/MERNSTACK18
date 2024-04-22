@@ -1,4 +1,4 @@
-//Aprat from for,of,in,froeach, while... ES6 introduced 4 new Iterators, which helps to read, modify and re-create the
+//Aprat from for,for-of,for-in,froeach, while... ES6 introduced 4 new Iterators, which helps to read, modify and re-create the
 //Array or Array of objects
 //1.Filter, 2.Map, 3.Some and 4.Reduce
 // When we do new changes it should not impact the core object, preserve the immutability
