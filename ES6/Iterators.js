@@ -20,13 +20,32 @@ let savedByCA = personsList.filter(person => person.savedby=="CaptainAmerica" ? 
 
 //2. List the Names saved by Iron Man and add Super Hero before the name 
 
-//let savedByIronMan = personsList.map(person => person.savedby=="IronMan" ? person.name : "").filter(names=> names != "")
+//let savedByIronMan = personsList.map(person => person.savedby=="IronMan" ? 
+//person.name : "").filter(names=> names != "")
+
+//its odd, but for below 
+//let savedByIronMan = personsList.filter(person => person.savedby=="IronMan"?
+// {"New Birth " : "Super Hero " + person.name} :"")
+//javascript will return
+/*[
+    { id: 2, name: 'Alice', savedby: 'IronMan' },
+    { id: 4, name: 'Adam', savedby: 'IronMan' }  
+  ]*/
+  //So to actually map to new object, need to use below syntax
 
 let savedByIronMan = personsList.map(person => {
                                         if(person.savedby=="IronMan") 
                                                 return {"New Birth " : "Super Hero " + person.name}
-                                            }).filter(names=> names != undefined)
-
+                                            }).filter(names=> names != undefined)   
+            
+/* output is:
+[
+  { 'New Birth ': 'Super Hero Alice' },
+  { 'New Birth ': 'Super Hero Adam' }  
+]
+*/
+//If I make a Alice undefined, I just get 'SuperHero undefined'. It is not filtered out
+//Even if I use names.name!=undefined
 //console.log(savedByIronMan)
 
 //console.log(personsList) //preservation of immutability, not changes the value in main list
@@ -51,7 +70,9 @@ let personsSavedUniquely = personsList.reduce((prevVal, currVal, index, array)=>
                 console.log(currVal)
                 console.log(index)
                 //console.log(array)
-                prevVal[currVal.savedby] = prevVal[currVal.savedby] ? prevVal[currVal.savedby] + 1 : 1
+                //ITS ODD BUT BELOW DOES NOT USE COMPARISON, IT USES ASSIGNMENT
+                prevVal[currVal.savedby] = prevVal[currVal.savedby] ? 
+                prevVal[currVal.savedby] + 1 : 1
                 return prevVal 
         }, []) //new Set()
 
