@@ -51,8 +51,8 @@
 
     const my_const = 2015.1
     
-    //const my_const = 2015.2 // re-declaration not allowed
-    //my_const = 2015.1 // re-assignment not allowed
+    //const my_const = 2015.2 // re-declaration not allowed - IDE i see sqiggly line
+    //my_const = 2015.1 // re-assignment not allowed - runtime error
     //console.log(my_const)
 
     //hack for const - value is immutable but reference can be changed
@@ -66,7 +66,7 @@
         session : "ES6"
     }
 
-    //User = User2 //Assignment to constant variable.
+    //User = User2 //Assignment to constant variable. Run time error
 
     User.session = "ES6 Variables" //updating the value of reference i.e. = session
     console.log(User)
