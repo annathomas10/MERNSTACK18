@@ -5,10 +5,10 @@
 
 const User = {"New" : "UserName"}
 export default User; //only one default export is allowed from one module/file
-
+/*
 export let UserInfo = ()=>{
     return "FirstName, LastName"
-}
+}*/
 
 //constants.js - filename and path
 export const pi = 3.141
