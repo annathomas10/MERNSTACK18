@@ -1,43 +1,30 @@
-//importing express top class and then creating express server
+//importing express top class, i.e this class can cause immports of other classes
+//that it depends on, and then creating express server
 
-console.log("In server js")
+const express = require('express') //express class constructor
+const app = express() //invoking the class to create express app server
 
-const express = require('express')
-const app = express() //this now is our express app server 
+const port = 9000//
 
-app.get('/', function (req, res) {
-  res.send('Hello World!!! From Wanda!!')
-})
+//instead of puting all the apis in one file, split them up
+const defaultRouter = require("/Routers/defaultRoute")
+const adminRouter = require("/Routers/adminRoute")
 
-
-//http://localhost:3000/data?name=suyash&session=express
-app.get('/data', function (req, res) {
-    //req.query - is used to read the values present after ? in api path
-    let queryString = req.query 
- 
-    console.log('queryString: ',queryString)
-    if (queryString.session == "express") {
-        res.json({"name " : queryString.name})
-    }else{
-        res.json(queryString)
-    }
-})
+//we can have one main and multiple other express apps at a place
+const adminApp = express(); // a new express app to handle requests mounted with admin in path
 
 
-//http://localhost:3000/nameByID/2000
-app.get('/nameByID/:id', function (req, res) {
-    //reads the parameter passed in path of API, we can have multiple query params
-    let queryParam = req.params["id"] 
-    console.log('id: ',queryParam)
-    if (queryParam == 2000) {
-        res.send("<h1>User is present</h1>")
-    }else{
-        res.send("<h1>User is not present</h1>")
-    }
-})
+//setting up the express middleware static to handle all the static files we need to serve to client
+// serve static files like images css using static middleware 
+app.use('/static', express.static('public')) //localhost:9000/static/alert.js
 
-//when i used the browser back and forward navigation, the call to the api is not resent
-//I know because the changed logging did not show in the console here
-app.listen(3000)
 
-console.log("api launched at - localhost:3000")
+//path mounting to other express app
+app.use("/admin", adminApp)
+adminApp.use(adminRouter)
+
+app.use("/",defaultRouter)
+
+app.listen(port)
+
+console.log("api launched at - localhost:"+port)
