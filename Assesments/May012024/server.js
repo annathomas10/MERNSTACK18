@@ -14,11 +14,16 @@ studentApp.use(studentRouter)
 
 //4. Create API's in default setup - getStudentDetails - Pass Student info like - 
 //Name, Age, Address, Session as query string
-//(see studentRoute.js)
 
-//5. Save this information received in #4  to a file named studentIfo using fs module async way
+// ***********  PLEASE SEE studentRoute.js FOR MY ANSWER ****************
 
+//5. Save this information received in #4  to a file named studentIfo using fs 
+//module async way
+//http://localhost:3000/student
 
+let writerStream = fs.createWriteStream();
+writerStream.write("the data");
+writerStream.end();
 
 app.listen(port)
 console.log("api launched at - localhost:"+port)

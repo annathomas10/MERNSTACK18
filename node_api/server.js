@@ -28,3 +28,5 @@ app.use("/",defaultRouter)
 app.listen(port)
 
 console.log("api launched at - localhost:"+port)
+
+console.log("api launched at - localhost:"+port)
