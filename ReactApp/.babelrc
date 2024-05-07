@@ -1,0 +1,14 @@
+//need this to tell ?? that we want our code to get transpiled
+//In package.json, we only included the modules into our project for use
+//Here, we actually say "use it"
+{
+    "presets": [
+        //this says transpile any new ES6 stuff - does it check each time we run?
+        "@babel/preset-env", 
+        //this says transpile any new react stuff
+        "@babel/preset-react"
+    ]
+ }
+
+ //This and the webpack config are created for us, he is doing manually to 
+ //explain things to us
